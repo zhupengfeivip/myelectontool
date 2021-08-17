@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>开发者工具箱</title>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-weui.min.js"></script>
+  <script src="js/xml2json.min.js"></script>
+  <script src="js/vue.js"></script>
+  <link rel="stylesheet" href="js/weui.min.css" media="all">
+  <link rel="stylesheet" href="js/jquery-weui.min.css">
+  <link rel="stylesheet" href="iconfont/iconfont.css" media="all">
+</head>
+
+<body>
+  <div class="VUE_BOX" v-cloak>
+    <h1>Hello World!</h1>
+    We are using Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>.
+    获取外网IP: {{config.curIp}}
+  </div>
+  <script>
+    var VUE_APP = new Vue({
+      el: ".VUE_BOX",
+      data: {
+        config: {
+          curIp: "0.0.0.0",
+        },
+        status: {
+          isRunning: false
+        }
+      },
+      created: function () {
+
+      },
+      mounted: function () {
+
+      },
+      methods: {
+      }
+    });
+
+    function msgBox(content, title = '温馨提示') {
+      remote.dialog.showErrorBox(title, content);
+    }
+
+  </script>
+</body>
+
+</html>
